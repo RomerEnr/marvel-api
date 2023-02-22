@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { createCharacterController } from "../../controllers/character/index";
+import { putCharacterController } from "../../controllers/character/index";
+import { getCharacterByIdController } from "../../controllers/character/index";
 
 
 export const characterRouter = Router();
 
 
-characterRouter.get("/");
-characterRouter.put("/", createCharacterController);
+characterRouter.get("/:id", getCharacterByIdController);
+characterRouter.put("/", putCharacterController);

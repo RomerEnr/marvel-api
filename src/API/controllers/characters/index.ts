@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CharacterRepositoryImpl } from "../../repositories/characterRepository";
-import { findCharacters } from "../../../service/character";
+import { findCharacters } from "../../../service/characters";
 
 export const findCharactersController = async(req: Request, res: Response) =>{
   const characterRepository = new CharacterRepositoryImpl();
