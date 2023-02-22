@@ -10,4 +10,4 @@ export const createCharacterController = async(req: Request, res: Response) =>{
 
   const character = await createCharacter(characterRepository, req.body);
   return res.status(200).json(character);
-}; 
+};
