@@ -3,7 +3,7 @@ import { Schema, Document, Model, model } from "mongoose";
 const characterSchema: Schema = new Schema({
   name: {
     type: String,
-    required: false,
+    required: true,
   },
   description: {
     type: String,
@@ -15,7 +15,7 @@ const characterSchema: Schema = new Schema({
   },
   realName: {
     type: String,
-    required: true,
+    required: false,
   },
   powers: [String],
   origin: {

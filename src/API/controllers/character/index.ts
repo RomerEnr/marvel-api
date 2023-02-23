@@ -25,7 +25,6 @@ export const getCharacterByIdController = async(req: Request, res: Response) =>{
 export const getCharacterByNameController = async(req: Request, res: Response) => {
   const characterRepository = new CharacterRepositoryImpl();
   const { name } = req.params;
-  console.log(name);
   const character = await findCharacterByName(characterRepository, name);
   if (!character){
     return res.status(404).json({ message: "Character not found" });
