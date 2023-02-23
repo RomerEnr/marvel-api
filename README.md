@@ -53,6 +53,8 @@ Dentro de la carpeta del proyecto debe estar el archivo `.env` con las siguiente
 + **PUT** `/character`
 	+ Crea un nuevo superheroe.
 	+ Debemos pasar a través del body los datos del superheroe definidos en el modelo de datos.
++ **PUT** `/character/id/delete/:id`
+	+ Elimina un superheroe dado su ID.
 
 Para hacer uso de estos endpoints podemos utilizar ThunderClient o Postman, una vez arrancado el proyecto en tu máquina podemos utilizar la siguiente URL:
 

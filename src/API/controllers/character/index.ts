@@ -31,3 +31,12 @@ export const getCharacterByNameController = async(req: Request, res: Response) =
   }
   return res.status(200).json(character); 
 };
+
+export const deleteCharacterByIdController = async(req: Request, res: Response) => {
+  const characterRepository = new CharacterRepositoryImpl();
+  const character = await characterRepository.deleteCharacter(req.params.id);
+  if (!character){
+    return res.status(404).json({ message: "Character not found" });
+  }
+  return res.status(200).json(character);
+};

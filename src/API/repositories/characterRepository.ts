@@ -6,7 +6,6 @@ export interface CharacterRepository {
   findByName(name: string): Promise<CharacterModel | null>;
   userExists(name: string): Promise<boolean>;
   createCharacter(character: typeof Character): Promise<CharacterModel>;
-  updateCharacter(id: string, character: typeof Character): Promise<CharacterModel | null>;
   deleteCharacter(id: string): Promise<CharacterModel | null>;
 }
 
@@ -28,10 +27,6 @@ export class CharacterRepositoryImpl implements CharacterRepository {
 
   public async createCharacter(character: typeof Character): Promise<CharacterModel> {
     return await Character.create(character);
-  }
-
-  public async updateCharacter(id: string, character: typeof Character): Promise<CharacterModel | null> {
-    return Character.findByIdAndUpdate(id, character, { new: true });
   }
 
   public async deleteCharacter(id: string): Promise<CharacterModel | null> {

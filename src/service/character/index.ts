@@ -15,3 +15,8 @@ export const findCharacterByName = async(CharacterRepository: CharacterRepositor
   const character = await CharacterRepository.findByName(name);
   return character;
 };
+
+export const deleteCharacterById = async(CharacterRepository: CharacterRepository, id: string): Promise<CharacterModel | null> => {
+  const character = await CharacterRepository.deleteCharacter(id);
+  return character;
+};
