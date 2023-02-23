@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { CharacterRepositoryImpl } from "../../repositories/characterRepository";
-import { createCharacter, findCharacterById } from "../../../service/character";
+import { createCharacter, findCharacterById, findCharacterByName } from "../../../service/character";
+
 
 export const putCharacterController = async(req: Request, res: Response) =>{
   const characterRepository = new CharacterRepositoryImpl();
@@ -19,4 +20,15 @@ export const getCharacterByIdController = async(req: Request, res: Response) =>{
     return res.status(404).json({ message: "Character not found" });
   }
   return res.status(200).json(character);
+};
+
+export const getCharacterByNameController = async(req: Request, res: Response) => {
+  const characterRepository = new CharacterRepositoryImpl();
+  const { name } = req.params;
+  console.log(name);
+  const character = await findCharacterByName(characterRepository, name);
+  if (!character){
+    return res.status(404).json({ message: "Character not found" });
+  }
+  return res.status(200).json(character); 
 };
