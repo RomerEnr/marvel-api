@@ -1,0 +1,9 @@
+version: "3"
+services:
+  backend:
+   image: romerenr/marvel-api:latest
+   environment:
+    - MONGO_URL=${MONGO_URL}
+    - PORT_APP=${PORT_APP}
+   volumes:
+     - ./.env:/app/.env
