@@ -54,6 +54,17 @@ Dentro de la carpeta del proyecto debe estar el archivo `.env` con las siguiente
 	+ Crea un nuevo superheroe.
 	+ Debemos pasar a través del body los datos del superheroe definidos en el modelo de datos.
 
+Para hacer uso de estos endpoints podemos utilizar ThunderClient o Postman, una vez arrancado el proyecto en tu máquina podemos utilizar la siguiente URL:
+
+```bash
+http://localhost:3000
+```
+
+Por ejemplo:
+
+```bash
+http://localhost:3000/character/id/${id}
+```
 
 ### Modelo de datos
 
